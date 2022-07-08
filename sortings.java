@@ -19,7 +19,7 @@ public class sortings {
             System.out.println("3)Selection");
             System.out.println("4)Quick");
             System.out.println("5)Merge");
-            System.out.println("6)Exit"); System.out.println("Select the sort Algorithm:");choice = s.nextInt();
+            System.out.println("6)Exit"); System.out.println("Select the sort Algorithm: or exit");choice = s.nextInt();
             switch(choice){
                 case 1: Bubble(a);
                         break;
