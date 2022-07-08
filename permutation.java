@@ -1,8 +1,8 @@
-//Permutations of a string
+//Permutations of a string using recursion
 import java.util.*;
 
-class bin{
-    static int c =1;
+class permutation{
+    static int c = 1;//number of permutations
     public static void main(String[] args){
         String s = "ABC";
         permut(s,0,s.length()-1);
