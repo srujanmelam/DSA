@@ -27,7 +27,7 @@ public class sortings {
                         break;
                 case 3: Selection(a);
                         break;
-                case 4: Quick(a);
+                case 4: Quick(a,0,a.length-1);System.out.println("Sorted using Quick sort");print(a);
                         break;
                 case 5: Merge(a,0,a.length-1);System.out.println("Sorted using Merge sort");print(a);
                         break;
@@ -36,6 +36,7 @@ public class sortings {
             }
         }
     }
+    //1)BUBBLE SORT
     public static void Bubble(int[] a){
         for(int i=0;i<a.length-1;i++){
             for(int j=0;j<a.length-1;j++){
@@ -48,6 +49,7 @@ public class sortings {
         print(a);
 
     }
+    //INSERTION SORT
     public static void Insertion(int[] a){
         int j,val;
         for(int i = 1;i<a.length;i++){
@@ -62,6 +64,7 @@ public class sortings {
         System.out.println("Sorted using Insertion Sort");
         print(a);
     }
+    //SELECTION SORT
     public static void Selection(int[] a){
         int min=0;
         for(int i=0;i<a.length-1;i++){
@@ -76,9 +79,29 @@ public class sortings {
         System.out.println("Sorted using Selection sort");
         print(a);
     }
-    public static void Quick(int[] a){
+    //4)QUICK SORT
+    public static void Quick(int[] a,int l,int h){
+        if(l<h){
+            int j = partition(a,l,h);
+            Quick(a,l,j-1);
+            Quick(a,j+1,h);
+        }
 
     }
+    public static int partition(int[] a,int l,int h){
+        int pivot = a[l];
+        int start=l,end=h;
+        while(start<end){
+            while(a[start]<=pivot){start++;}
+            while(a[end]>pivot){end--;}
+            if(start<end){
+                a[start] = a[start]+a[end]-(a[end]=a[start]);
+            }
+        }
+        a[l] = a[l]+a[end]-(a[end]=a[l]);
+        return end;
+    }
+    //5)MERGE SORT  
     public static void Merge(int[] a,int l,int h){
         
         if(l<h){
@@ -111,6 +134,7 @@ public class sortings {
             a[k]=q[j];k++;j++;
         }
     }
+    //print array
     public static void print(int[] a){
         for(int i=0;i<a.length;i++){
             System.out.print(a[i]+" ");
