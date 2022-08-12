@@ -148,5 +148,4 @@ class Node{
         print(r.left,lvl-1);
         print(r.right,lvl-1);
     }
-
 }
