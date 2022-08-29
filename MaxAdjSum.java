@@ -8,7 +8,7 @@ public class MaxAdjSum {
     }
     public static int solve(int[] dp,int[] a,int i){
       if(i == 0){
-        dp[i] = a[i];
+        //dp[i] = a[i];
         return a[i];
       }
       if(i<0){
